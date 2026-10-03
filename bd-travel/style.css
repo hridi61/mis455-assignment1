@@ -1,0 +1,45 @@
+/* ===== Base styles ===== */
+:root{--green:#0f5132;--gold:#f4b942;--bg:#f3f7f4;--ink:#1d2b24;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:"Nunito Sans",Arial,sans-serif;background-color:var(--bg);color:var(--ink);font-size:18px;line-height:1.6;}
+h1,h2{font-family:"Rozha One",Georgia,serif;font-weight:400;}
+a{color:var(--green);font-weight:700;}
+img{width:100%;display:block;border-radius:8px;}
+
+/* ===== Navbar ===== */
+.navbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;background-color:var(--green);padding:14px 30px;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.logo{font-family:"Rozha One",Georgia,serif;color:#fff;font-size:24px;}
+.links a{color:#fff;text-decoration:none;margin-left:20px;padding:6px 10px;border-radius:4px;}
+.links a:hover,.links a.active{background-color:var(--gold);color:var(--ink);}
+
+/* ===== Hero banner ===== */
+.hero{background-color:#1b7a50;color:#fff;text-align:center;padding:50px 20px;}
+.hero h1{margin:0 0 8px;font-size:44px;}
+
+/* ===== FLEX layout (home page) ===== */
+.flex-row{display:flex;gap:24px;max-width:1100px;margin:40px auto;padding:0 20px;}
+.flex-row .card{flex:1;}
+
+/* ===== GRID layout (places page) ===== */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px;}
+
+/* ===== Shared components ===== */
+.wrap{max-width:900px;margin:40px auto;padding:0 20px;}
+.card{background-color:#fff;padding:20px;margin:0;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.15);}
+.cap,figcaption{font-size:15px;margin-top:10px;}
+.pair{display:flex;gap:20px;margin-top:24px;}
+.pair img{box-shadow:0 4px 12px rgba(0,0,0,.2);}
+footer{background-color:var(--ink);color:#ddd;text-align:center;padding:20px;margin-top:40px;font-size:15px;}
+
+/* ===== Mobile ===== */
+@media(max-width:700px){.flex-row,.pair{flex-direction:column;}.grid{grid-template-columns:1fr;}}
+
+/* ===== Photo sizing: same shape for every picture ===== */
+img{aspect-ratio:3/2;object-fit:cover;}
+img[src*="coxsbazar"]{object-position:75% 80%;}  /* focus on the boats */
+img[src*="rickshaw"]{object-position:50% 25%;}   /* focus on the painted back */
+img[src*="sajek"]{object-position:50% 55%;}
+
+/* ===== Fix: two images side by side must share the row equally ===== */
+.pair img{flex:1;min-width:0;width:50%;}
+@media(max-width:700px){.pair img{width:100%;flex:none;}}
